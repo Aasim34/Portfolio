@@ -12,7 +12,8 @@ export function Navbar() {
     { name: 'About', path: '/about' },
     { name: 'Projects', path: '/projects' },
     { name: 'Skills', path: '/skills' },
-    { name: 'Fun', path: '/fun' },
+    { name: 'Side Quests', path: '/fun' },
+    { name: 'Moments & Memories', path: '/moments' },
     { name: 'Contact', path: '/contact' },
   ];
 

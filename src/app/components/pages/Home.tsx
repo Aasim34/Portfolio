@@ -3,6 +3,7 @@ import { ArrowRight, Download } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import gmailLogo from '@/assets/c15b5692091c1796f264c6911b20032c19157478.png';
+import profileImg from '@/assets/Profile/WhatsApp Image 2026-02-11 at 3.47.21 PM.jpeg';
 
 export function Home() {
   const projects = [
@@ -55,7 +56,7 @@ export function Home() {
                 {/* Photo Container with Neon Glow */}
                 <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-[#8B5CF6] shadow-[0_0_30px_rgba(139,92,246,0.5)] z-10">
                   <img
-                    src="https://images.unsplash.com/photo-1717672135267-c788f9582870?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBpbmRpYW4lMjBtYWxlJTIwZGV2ZWxvcGVyJTIwcG9ydHJhaXQlMjBkYXJrJTIwYmFja2dyb3VuZCUyMHN0dWRpbyUyMGxpZ2h0aW5nfGVufDF8fHx8MTc3MDczMTA0MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                    src={profileImg}
                     alt="Mohammed Vasim"
                     className="w-full h-full object-cover"
                   />

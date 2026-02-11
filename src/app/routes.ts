@@ -7,6 +7,7 @@ import { Skills } from "./components/pages/Skills";
 import { Fun } from "./components/pages/Fun";
 import { Contact } from "./components/pages/Contact";
 import { HalideDemo } from "./components/pages/HalideDemo";
+import { MomentsAndMemories } from "./components/pages/MomentsAndMemories";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
       { path: "projects", Component: Projects },
       { path: "skills", Component: Skills },
       { path: "fun", Component: Fun },
+      { path: "moments", Component: MomentsAndMemories },
       { path: "contact", Component: Contact },
       { path: "halide", Component: HalideDemo },
     ],

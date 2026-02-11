@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Award, Download, GraduationCap, Trophy } from 'lucide-react';
+import aboutPhoto from '@/assets/Movements/1770800597930.jpg';
 
 export function About() {
   const achievements = [
@@ -61,7 +62,7 @@ export function About() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0F] via-[#7C3AED] to-[#8B5CF6] rounded-2xl blur-2xl opacity-50"></div>
                 <div className="relative rounded-2xl overflow-hidden border-2 border-[#8B5CF6]/40 hover:border-[#8B5CF6]/60 transition-all">
                   <img
-                    src="https://images.unsplash.com/photo-1752859951149-7d3fc700a7ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkZXZlbG9wZXIlMjBwb3J0cmFpdCUyMG9mZmljZXxlbnwxfHx8fDE3NzA3MjkzNjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src={aboutPhoto}
                     alt="Mohammed Vasim"
                     className="w-full max-w-md h-auto object-cover"
                   />

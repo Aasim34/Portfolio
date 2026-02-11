@@ -13,7 +13,7 @@ export function Fun() {
       image: '/src/assets/Itachi theme/download (1).jfif',
       title: 'Dark Aesthetic',
       subtitle: 'Beauty in shadows and contrasts',
-      tag: 'Series 🎬',
+      tag: 'Movies & Series 🎬',
       quote: 'Where darkness meets depth',
     },
     {
@@ -42,7 +42,7 @@ export function Fun() {
       image: '/src/assets/Itachi theme/download.jfif',
       title: 'Cinematic Vision',
       subtitle: 'Visual creativity that inspires',
-      tag: 'Calm in Chaos ✨',
+      tag: 'Takamaru ✨',
       quote: 'Every shot is intentional',
     },
     {
