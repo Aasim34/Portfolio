@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Award, Download, GraduationCap, Trophy, Medal, Star } from 'lucide-react';
 import aboutPhoto from '@/assets/Movements/1770800597930.jpg';
+import catCoffeeGif from '@/assets/cat/cat-and-coffee.gif';
 
 export function About() {
   const achievements = [
@@ -230,6 +231,19 @@ export function About() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Cat Drinking Coffee GIF - Easter Egg */}
+      <div className="fixed top-20 right-6 z-40 pointer-events-none">
+        <img
+          src={catCoffeeGif}
+          alt=""
+          className="w-20 h-auto opacity-70"
+          style={{ 
+            filter: 'brightness(0.7) contrast(1.2) saturate(0.8) hue-rotate(250deg) drop-shadow(0 4px 12px rgba(139, 92, 246, 0.6))',
+            mixBlendMode: 'screen'
+          }}
+        />
       </div>
     </div>
   );

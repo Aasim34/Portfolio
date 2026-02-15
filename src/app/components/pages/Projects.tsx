@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, ExternalLink, Sparkles } from 'lucide-react';
 import { FaBook, FaGithub, FaRobot, FaShieldAlt } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
+import catCoffeeGif from '@/assets/cat/cat-and-coffee.gif';
 
 // Dynamically import all screenshot images from the Projects folder
 const screenshotModules = import.meta.glob<string>(
@@ -707,6 +708,19 @@ export function Projects() {
             </motion.div>
           </div>
         )}
+      </div>
+
+      {/* Cat Drinking Coffee GIF - Easter Egg */}
+      <div className="fixed top-20 right-6 z-40 pointer-events-none">
+        <img
+          src={catCoffeeGif}
+          alt=""
+          className="w-20 h-auto opacity-70"
+          style={{ 
+            filter: 'brightness(0.7) contrast(1.2) saturate(0.8) hue-rotate(250deg) drop-shadow(0 4px 12px rgba(139, 92, 246, 0.6))',
+            mixBlendMode: 'screen'
+          }}
+        />
       </div>
     </div>
   );

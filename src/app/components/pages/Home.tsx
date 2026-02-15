@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import gmailLogo from '@/assets/c15b5692091c1796f264c6911b20032c19157478.png';
 import profileImg from '@/assets/Profile/WhatsApp Image 2026-02-11 at 3.47.21 PM.jpeg';
+import catCoffeeGif from '@/assets/cat/cat-and-coffee.gif';
 
 export function Home() {
   const projects = [
@@ -332,6 +333,19 @@ export function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Cat Drinking Coffee GIF - Easter Egg */}
+      <div className="fixed top-20 right-6 z-40 pointer-events-none">
+        <img
+          src={catCoffeeGif}
+          alt=""
+          className="w-20 h-auto opacity-70"
+          style={{ 
+            filter: 'brightness(0.7) contrast(1.2) saturate(0.8) hue-rotate(250deg) drop-shadow(0 4px 12px rgba(139, 92, 246, 0.6))',
+            mixBlendMode: 'screen'
+          }}
+        />
+      </div>
     </div>
   );
 }
