@@ -248,6 +248,7 @@ export function Projects() {
 
   const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
+  const [showProjects, setShowProjects] = useState(false);
 
   useEffect(() => {
     if (!activeProject) return;
@@ -258,6 +259,20 @@ export function Projects() {
       document.body.style.overflow = originalOverflow;
     };
   }, [activeProject]);
+
+  // Show projects when user scrolls down
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      // Show projects after scrolling 300px
+      if (scrollPosition > 300 && !showProjects) {
+        setShowProjects(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [showProjects]);
 
   useEffect(() => {
     if (!activeProject && !expandedImage) return;
@@ -341,17 +356,46 @@ export function Projects() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {projects.map((project, index) => (
-            <motion.article
-              key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.24 }}
-              transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -6 }}
-              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0E0E14]/90 shadow-[0_16px_60px_rgba(0,0,0,0.55)] backdrop-blur-md"
+        {/* Scroll Indicator - Fades out when projects appear */}
+        {!showProjects && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="flex flex-col items-center justify-center gap-3 py-8"
+          >
+            <p className="text-sm text-gray-400">Scroll to explore projects</p>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              className="h-8 w-5 rounded-full border-2 border-[#8B5CF6]/40 flex items-start justify-center p-1"
             >
+              <motion.div
+                animate={{ opacity: [0.3, 1, 0.3] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                className="h-1.5 w-1.5 rounded-full bg-[#8B5CF6]"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+
+        {/* Projects Grid - Shows after scrolling */}
+        {showProjects && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3"
+          >
+            {projects.map((project, index) => (
+              <motion.article
+                key={project.title}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6 }}
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0E0E14]/90 shadow-[0_16px_60px_rgba(0,0,0,0.55)] backdrop-blur-md"
+              >
               <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden>
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-15`} />
                 <div className="absolute inset-0 shadow-[0_0_55px_rgba(139,92,246,0.28)]" />
@@ -415,7 +459,8 @@ export function Projects() {
               </div>
             </motion.article>
           ))}
-        </div>
+          </motion.div>
+        )}
 
         {activeProject && (
           <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-8">
@@ -662,37 +707,6 @@ export function Projects() {
             </motion.div>
           </div>
         )}
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center gap-4 rounded-3xl border border-white/10 bg-gradient-to-r from-[#0F0F1A] via-[#0B0B12] to-[#0F0F1A] px-6 py-10 text-center shadow-[0_18px_60px_rgba(0,0,0,0.55)]"
-        >
-          <p className="text-sm uppercase tracking-[0.2em] text-gray-400">Next up</p>
-          <h3 className="text-2xl sm:text-3xl font-semibold text-white">
-            Want a bespoke build with measurable lift?
-          </h3>
-          <p className="max-w-2xl text-gray-300">
-            From idea to shipped feature set, I pair fast experiments with production rigor. Let’s design, instrument, and launch something bold.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_55px_rgba(124,58,237,0.35)] transition hover:translate-y-[-1px]"
-            >
-              Book a call
-              <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href="/about"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/12 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#C084FC] hover:bg-white/10"
-            >
-              View resume
-            </a>
-          </div>
-        </motion.div>
       </div>
     </div>
   );

@@ -120,7 +120,10 @@ export function Home() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
-                  href="#"
+                  href="/Resume/MOHAMMAD_VASIM_RESUME.pdf"
+                  download="MOHAMMAD_VASIM_RESUME.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 px-6 py-3 bg-transparent text-white rounded-lg border border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
                 >
                   <Download className="w-4 h-4" />
@@ -145,7 +148,7 @@ export function Home() {
                   <FaGithub className="w-6 h-6 text-white group-hover:brightness-110 transition-all" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/mohammed-vasim-64084b331"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-3 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
@@ -153,7 +156,7 @@ export function Home() {
                   <FaLinkedin className="w-6 h-6 text-[#0A66C2] group-hover:brightness-125 transition-all" />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/mdaasim2005"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-3 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
@@ -161,7 +164,7 @@ export function Home() {
                   <FaInstagram className="w-6 h-6 text-[#E4405F] group-hover:brightness-125 transition-all" />
                 </a>
                 <a
-                  href="mailto:mohammadvasim353@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=mohammadvasim353@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-3 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"

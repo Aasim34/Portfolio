@@ -1,180 +1,127 @@
 import { motion } from 'motion/react';
-import { 
-  Code, 
-  Brain, 
-  Layers, 
-  Layout, 
-  Database, 
-  Wrench,
-  Cpu,
-  Globe,
-  Server,
-  GitBranch
-} from 'lucide-react';
+import { useEffect } from 'react';
 
 export function Skills() {
-  const skillCategories = [
-    {
-      icon: Code,
-      title: 'Programming Languages',
-      skills: ['Python', 'C++', 'JavaScript', 'TypeScript', 'SQL'],
-      gradient: 'from-[#0A0A0F] via-[#7C3AED] to-[#8B5CF6]',
-    },
-    {
-      icon: Brain,
-      title: 'AI & Machine Learning',
-      skills: ['Machine Learning', 'Deep Learning', 'Computer Vision', 'Natural Language Processing', 'Neural Networks'],
-      gradient: 'from-[#7C3AED] to-[#A855F7]',
-    },
-    {
-      icon: Layers,
-      title: 'AI/ML Frameworks',
-      skills: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Keras', 'OpenCV', 'Hugging Face'],
-      gradient: 'from-[#8B5CF6] to-[#C084FC]',
-    },
-    {
-      icon: Server,
-      title: 'Backend Frameworks',
-      skills: ['FastAPI', 'Flask', 'Node.js', 'Express.js', 'Django'],
-      gradient: 'from-[#A855F7] to-[#C084FC]',
-    },
-    {
-      icon: Layout,
-      title: 'Frontend Development',
-      skills: ['HTML5', 'CSS3', 'React', 'Tailwind CSS', 'JavaScript', 'Responsive Design'],
-      gradient: 'from-[#7C3AED] to-[#8B5CF6]',
-    },
-    {
-      icon: Database,
-      title: 'Databases',
-      skills: ['MongoDB', 'MySQL', 'PostgreSQL', 'Redis', 'Firebase'],
-      gradient: 'from-[#8B5CF6] to-[#A855F7]',
-    },
-    {
-      icon: Wrench,
-      title: 'Developer Tools',
-      skills: ['Git', 'GitHub', 'Docker', 'Linux', 'VS Code', 'Jupyter Notebook'],
-      gradient: 'from-[#0A0A0F] via-[#8B5CF6] to-[#C084FC]',
-    },
-    {
-      icon: Globe,
-      title: 'Other Technologies',
-      skills: ['REST APIs', 'GraphQL', 'WebSockets', 'CI/CD', 'AWS', 'Google Cloud'],
-      gradient: 'from-[#7C3AED] to-[#A855F7]',
-    },
+  // Load Devicon CDN
+  useEffect(() => {
+    // Check if Devicon CSS is already loaded
+    if (!document.querySelector('link[href*="devicon"]')) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css';
+      document.head.appendChild(link);
+    }
+  }, []);
+
+  const skills = [
+    { name: 'HTML5', icon: 'devicon-html5-plain colored', color: '#E34F26' },
+    { name: 'CSS3', icon: 'devicon-css3-plain colored', color: '#1572B6' },
+    { name: 'React', icon: 'devicon-react-original colored', color: '#61DAFB' },
+    { name: 'Node.js', icon: 'devicon-nodejs-plain colored', color: '#339933' },
+    { name: 'Git', icon: 'devicon-git-plain colored', color: '#F05032' },
+    { name: 'GitHub', icon: 'devicon-github-original', color: '#181717' },
+    { name: 'Docker', icon: 'devicon-docker-plain colored', color: '#2496ED' },
+    { name: 'Python', icon: 'devicon-python-plain colored', color: '#3776AB' },
+    { name: 'FastAPI', icon: 'devicon-fastapi-plain colored', color: '#009688' },
+    { name: 'Flask', icon: 'devicon-flask-original', color: '#000000' },
+    { name: 'TensorFlow', icon: 'devicon-tensorflow-original colored', color: '#FF6F00' },
+    { name: 'OpenCV', icon: 'devicon-opencv-plain colored', color: '#5C3EE8' },
+    { name: 'MongoDB', icon: 'devicon-mongodb-plain colored', color: '#47A248' },
+    { name: 'Firebase', icon: 'devicon-firebase-plain colored', color: '#FFCA28' },
+    { name: 'Scikit-learn', icon: 'devicon-scikitlearn-plain colored', color: '#F7931E' },
   ];
 
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: 'easeInOut' }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-            Skills & <span className="bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] bg-clip-text text-transparent">Expertise</span>
-          </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and technologies I work with
-          </p>
-        </motion.div>
+    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background with noise and gradient effect */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black"></div>
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-30"></div>
 
-        {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {skillCategories.map((category, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Centered Container Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="bg-gradient-to-b from-[#0a0a0a] to-[#121212] rounded-3xl p-8 sm:p-12 lg:p-16 border border-purple-500/20 shadow-2xl shadow-purple-500/10 backdrop-blur-sm"
+        >
+          {/* Title Section */}
+          <div className="text-center mb-12">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: index * 0.05, ease: 'easeInOut' }}
-              className="bg-[#121212] rounded-xl p-6 border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-xl hover:shadow-[#8B5CF6]/30 transition-all group"
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 bg-clip-text text-transparent"
+              style={{ 
+                textShadow: '0 0 40px rgba(168, 85, 247, 0.3)',
+              }}
             >
-              {/* Icon and Title */}
-              <div className="flex items-center gap-4 mb-4">
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${category.gradient} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg shadow-[#8B5CF6]/20`}>
-                  <category.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-white">{category.title}</h3>
-              </div>
-
-              {/* Skills Tags */}
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.span
-                    key={skillIndex}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: false }}
-                    transition={{ duration: 0.3, delay: index * 0.05 + skillIndex * 0.03, ease: 'easeInOut' }}
-                    className="px-3 py-1.5 bg-[#0A0A0F] text-gray-300 text-sm rounded-lg border border-[#8B5CF6]/20 hover:border-[#8B5CF6] hover:text-white transition-all"
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Additional Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: 'easeInOut' }}
-          className="mt-16"
-        >
-          <div className="bg-gradient-to-r from-[#121212] to-[#161616] rounded-2xl p-8 border border-[#8B5CF6]/30">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-r from-[#0A0A0F] via-[#7C3AED] to-[#8B5CF6] flex items-center justify-center shadow-lg shadow-[#8B5CF6]/30">
-                  <Cpu className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">50+</h3>
-                <p className="text-gray-400">Technologies Mastered</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-r from-[#7C3AED] to-[#A855F7] flex items-center justify-center shadow-lg shadow-[#8B5CF6]/30">
-                  <Code className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">20+</h3>
-                <p className="text-gray-400">Projects Completed</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-r from-[#8B5CF6] to-[#C084FC] flex items-center justify-center shadow-lg shadow-[#8B5CF6]/30">
-                  <GitBranch className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">1000+</h3>
-                <p className="text-gray-400">Lines of Code Written</p>
-              </div>
-            </div>
+              What I'm Learning
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto"
+            >
+              Continuously expanding my skillset with modern technologies and development practices
+            </motion.p>
           </div>
-        </motion.div>
 
-        {/* Learning Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: 'easeInOut' }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-[#121212] rounded-2xl p-8 border border-[#8B5CF6]/30">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Continuous <span className="bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] bg-clip-text text-transparent">Learning</span>
-            </h3>
-            <p className="text-gray-400 max-w-3xl mx-auto">
-              Technology evolves rapidly, and I'm committed to staying at the forefront of innovation. 
-              I continuously explore new frameworks, tools, and methodologies to enhance my skill set 
-              and deliver cutting-edge solutions.
-            </p>
+          {/* Skills Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                  ease: 'easeOut',
+                }}
+                whileHover={{ 
+                  scale: 1.1,
+                  transition: { duration: 0.2 }
+                }}
+                className="group relative"
+              >
+                {/* Card */}
+                <div className="relative bg-[#0a0a0a] rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 overflow-hidden">
+                  {/* Glow effect on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 via-purple-500/0 to-purple-500/0 group-hover:from-purple-500/10 group-hover:via-purple-500/5 group-hover:to-purple-500/0 transition-all duration-300"></div>
+                  
+                  {/* Purple glow behind icon */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-purple-500/0 group-hover:bg-purple-500/20 rounded-full blur-2xl transition-all duration-300"></div>
+
+                  {/* Icon */}
+                  <div className="relative flex flex-col items-center justify-center space-y-3">
+                    <i 
+                      className={`${skill.icon} text-5xl transition-all duration-300 group-hover:scale-110`}
+                      style={{
+                        filter: 'drop-shadow(0 0 8px rgba(168, 85, 247, 0))',
+                      }}
+                    ></i>
+                    
+                    {/* Label */}
+                    <span className="text-gray-300 text-xs sm:text-sm font-medium text-center group-hover:text-white transition-colors duration-300">
+                      {skill.name}
+                    </span>
+                  </div>
+
+                  {/* Enhanced glow effect on hover */}
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+                    style={{
+                      boxShadow: '0 0 20px rgba(168, 85, 247, 0.3), inset 0 0 20px rgba(168, 85, 247, 0.1)',
+                    }}
+                  ></div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>

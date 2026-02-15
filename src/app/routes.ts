@@ -4,6 +4,7 @@ import { Home } from "./components/pages/Home";
 import { About } from "./components/pages/About";
 import { Projects } from "./components/pages/Projects";
 import { Skills } from "./components/pages/Skills";
+import { Achievements } from "./components/pages/Achievements";
 import { Fun } from "./components/pages/Fun";
 import { Contact } from "./components/pages/Contact";
 import { HalideDemo } from "./components/pages/HalideDemo";
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
       { path: "about", Component: About },
       { path: "projects", Component: Projects },
       { path: "skills", Component: Skills },
+      { path: "achievements", Component: Achievements },
       { path: "fun", Component: Fun },
       { path: "moments", Component: MomentsAndMemories },
       { path: "contact", Component: Contact },

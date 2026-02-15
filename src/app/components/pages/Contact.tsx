@@ -31,7 +31,7 @@ export function Contact() {
       icon: 'gmail',
       label: 'Email',
       value: 'mohammadvasim353@gmail.com',
-      href: 'mailto:mohammadvasim353@gmail.com',
+      href: 'https://mail.google.com/mail/?view=cm&fs=1&to=mohammadvasim353@gmail.com',
       gradient: 'from-[#0A0A0F] via-[#7C3AED] to-[#8B5CF6]',
       iconColor: 'text-[#8B5CF6]',
     },
@@ -46,16 +46,16 @@ export function Contact() {
     {
       icon: FaLinkedin,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/mohammedvasim',
-      href: 'https://linkedin.com',
+      value: 'mohammed-vasim-64084b331',
+      href: 'https://www.linkedin.com/in/mohammed-vasim-64084b331',
       gradient: 'from-[#8B5CF6] to-[#C084FC]',
       iconColor: 'text-[#0A66C2]',
     },
     {
       icon: FaInstagram,
       label: 'Instagram',
-      value: '@mohammedvasim',
-      href: 'https://instagram.com',
+      value: '@mdaasim2005',
+      href: 'https://www.instagram.com/mdaasim2005',
       gradient: 'from-[#A855F7] to-[#D946EF]',
       iconColor: 'text-[#E4405F]',
     },
@@ -107,7 +107,10 @@ export function Contact() {
               </div>
 
               <a
-                href="#"
+                href="/Resume/MOHAMMAD_VASIM_RESUME.pdf"
+                download="MOHAMMAD_VASIM_RESUME.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white rounded-lg hover:shadow-lg hover:shadow-[#8B5CF6]/50 hover:-translate-y-1 transition-all"
               >
                 <Download className="w-4 h-4" />
@@ -276,7 +279,7 @@ export function Contact() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="mailto:mohammadvasim353@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=mohammadvasim353@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white rounded-lg hover:shadow-lg hover:shadow-[#8B5CF6]/50 hover:-translate-y-1 transition-all"
@@ -294,7 +297,7 @@ export function Contact() {
                 Connect on LinkedIn
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/mdaasim2005"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 px-6 py-3 bg-transparent text-white rounded-lg border border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"

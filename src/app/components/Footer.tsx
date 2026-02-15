@@ -25,7 +25,7 @@ export function Footer() {
             </div>
             <div className="flex flex-wrap gap-3">
               <a
-                href="mailto:mohammadvasim353@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=mohammadvasim353@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_45px_rgba(124,58,237,0.32)] transition hover:translate-y-[-2px]"
@@ -67,7 +67,7 @@ export function Footer() {
               <ul className="space-y-2 text-sm">
                 <li><a href="/skills" className="text-gray-400 hover:text-[#8B5CF6] transition-colors">Skills</a></li>
                 <li><a href="/contact" className="text-gray-400 hover:text-[#8B5CF6] transition-colors">Contact</a></li>
-                <li><a href="mailto:mohammadvasim353@gmail.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#8B5CF6] transition-colors">Gmail</a></li>
+                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mohammadvasim353@gmail.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#8B5CF6] transition-colors">Gmail</a></li>
               </ul>
             </div>
           </div>
@@ -84,7 +84,7 @@ export function Footer() {
                 <FaGithub className="w-5 h-5 text-white group-hover:brightness-110 transition-all" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/mohammed-vasim-64084b331"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group p-2 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
@@ -92,7 +92,7 @@ export function Footer() {
                 <FaLinkedin className="w-5 h-5 text-[#0A66C2] group-hover:brightness-125 transition-all" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/mdaasim2005"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group p-2 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
@@ -100,7 +100,7 @@ export function Footer() {
                 <FaInstagram className="w-5 h-5 text-[#E4405F] group-hover:brightness-125 transition-all" />
               </a>
               <a
-                href="mailto:mohammadvasim353@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=mohammadvasim353@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group p-2 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"

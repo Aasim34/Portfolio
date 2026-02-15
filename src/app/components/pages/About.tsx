@@ -1,32 +1,44 @@
 import { motion } from 'motion/react';
-import { Award, Download, GraduationCap, Trophy } from 'lucide-react';
+import { Award, Download, GraduationCap, Trophy, Medal, Star } from 'lucide-react';
 import aboutPhoto from '@/assets/Movements/1770800597930.jpg';
 
 export function About() {
   const achievements = [
     {
       icon: Trophy,
-      title: 'Top 10 Finalist – Kalp-AI-thon 2025',
+      title: 'Top 10 Finalist',
+      subtitle: 'Kalp-AI-thon 2025',
       description: 'Advanced to finals in prestigious AI hackathon competition',
-      gradient: 'from-[#0A0A0F] via-[#7C3AED] to-[#8B5CF6]',
+      gradient: 'from-[#8B5CF6] via-[#A855F7] to-[#C084FC]',
+      year: '2025',
+      badge: 'Finalist',
     },
     {
       icon: Award,
-      title: 'Winner – Bluetooth Controlled Robot Competition',
+      title: 'Winner',
+      subtitle: 'Bluetooth Controlled Robot Competition',
       description: 'First place in robotics innovation challenge',
-      gradient: 'from-[#7C3AED] to-[#A855F7]',
+      gradient: 'from-[#C084FC] via-[#A855F7] to-[#8B5CF6]',
+      year: '2024',
+      badge: 'Winner',
     },
     {
-      icon: Trophy,
-      title: 'Top 10 Team – Smart India Hackathon (Internal)',
+      icon: Medal,
+      title: 'Top 10 Team',
+      subtitle: 'Smart India Hackathon (Internal)',
       description: 'Selected among top teams for national-level hackathon',
-      gradient: 'from-[#8B5CF6] to-[#C084FC]',
+      gradient: 'from-[#A855F7] via-[#8B5CF6] to-[#C084FC]',
+      year: '2024',
+      badge: 'National Level',
     },
     {
-      icon: Award,
-      title: 'Runner-up – Starlink Innovation Challenge',
+      icon: Star,
+      title: 'Runner-up',
+      subtitle: 'Starlink Innovation Challenge',
       description: 'Second place in innovation and technology competition',
-      gradient: 'from-[#A855F7] to-[#C084FC]',
+      gradient: 'from-[#8B5CF6] via-[#C084FC] to-[#A855F7]',
+      year: '2024',
+      badge: 'Runner-up',
     },
   ];
 
@@ -105,7 +117,10 @@ export function About() {
               </div>
 
               <a
-                href="#"
+                href="/Resume/MOHAMMAD_VASIM_RESUME.pdf"
+                download="MOHAMMAD_VASIM_RESUME.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white rounded-lg hover:shadow-lg hover:shadow-[#8B5CF6]/50 hover:-translate-y-1 transition-all"
               >
                 <Download className="w-4 h-4" />
@@ -116,35 +131,101 @@ export function About() {
         </motion.div>
 
         {/* Achievements Section */}
-        <div>
+        <div className="relative mt-20">
+          {/* Animated background orbs */}
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[100px] animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-800/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }}></div>
+          
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: 'easeInOut' }}
-            className="text-center mb-12"
+            className="text-center mb-12 relative z-10"
           >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-block mb-4"
+            >
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium">
+                <Trophy className="w-4 h-4" />
+                Notable Achievements
+              </span>
+            </motion.div>
+            
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Achievements & <span className="bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] bg-clip-text text-transparent">Recognition</span>
+              Achievements & <span className="bg-gradient-to-r from-[#A855F7] via-[#C084FC] to-[#E0B0FF] bg-clip-text text-transparent">Recognition</span>
             </h2>
-            <p className="text-gray-400">Milestones and accomplishments throughout my journey</p>
+            <p className="text-gray-400 text-base">Milestones and accomplishments throughout my journey</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 relative z-10">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeInOut' }}
-                className="bg-[#121212] rounded-xl p-6 border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-xl hover:shadow-[#8B5CF6]/30 transition-all hover:-translate-y-1"
+                transition={{ duration: 0.6, delay: index * 0.15, ease: 'easeInOut' }}
+                className="group relative"
               >
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${achievement.gradient} mb-4 flex items-center justify-center shadow-lg shadow-[#8B5CF6]/20`}>
-                  <achievement.icon className="w-6 h-6 text-white" />
+                {/* Card */}
+                <div className="relative h-full bg-gradient-to-br from-zinc-900/80 via-zinc-900/40 to-zinc-950/80 rounded-3xl p-8 border border-zinc-800/50 hover:border-purple-500/50 transition-all duration-500 backdrop-blur-xl overflow-hidden">
+                  {/* Animated gradient on hover */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${achievement.gradient} opacity-5 blur-2xl`}></div>
+                  </div>
+
+                  {/* Glow effect */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-purple-600/0 via-purple-600/20 to-purple-600/0 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700 rounded-3xl"></div>
+
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Top section with icon and badge */}
+                    <div className="flex items-start justify-between mb-6">
+                      {/* Icon */}
+                      <div className={`relative p-4 rounded-2xl bg-gradient-to-br ${achievement.gradient} shadow-2xl group-hover:shadow-purple-500/30 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3`}>
+                        <achievement.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                        
+                        {/* Icon glow */}
+                        <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${achievement.gradient} blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                      </div>
+
+                      {/* Badge */}
+                      <span className="px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-semibold uppercase tracking-wider">
+                        {achievement.badge}
+                      </span>
+                    </div>
+
+                    {/* Title section */}
+                    <div className="mb-4 space-y-1">
+                      <h3 className="text-2xl font-bold text-white group-hover:text-purple-100 transition-colors duration-300">
+                        {achievement.title}
+                      </h3>
+                      <p className="text-base text-purple-400 font-medium">
+                        {achievement.subtitle}
+                      </p>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                      {achievement.description}
+                    </p>
+
+                    {/* Footer with year */}
+                    <div className="pt-4 border-t border-zinc-800/50">
+                      <span className="text-xs text-gray-500 font-medium">
+                        Achieved in {achievement.year}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-transparent rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-white">{achievement.title}</h3>
-                <p className="text-gray-400 text-sm">{achievement.description}</p>
               </motion.div>
             ))}
           </div>
