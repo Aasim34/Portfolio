@@ -3,6 +3,7 @@ import { Download, Send, MapPin } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { useState } from 'react';
 import gmailLogo from '@/assets/c15b5692091c1796f264c6911b20032c19157478.png';
+import profileImg from '@/assets/Profile/WhatsApp Image 2026-02-11 at 3.47.21 PM.jpeg';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -94,7 +95,7 @@ export function Contact() {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0F] via-[#7C3AED] to-[#8B5CF6] rounded-full blur-lg opacity-50"></div>
                   <img
-                    src="https://images.unsplash.com/photo-1752859951149-7d3fc700a7ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkZXZlbG9wZXIlMjBwb3J0cmFpdCUyMG9mZmljZXxlbnwxfHx8fDE3NzA3MjkzNjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src={profileImg}
                     alt="Mohammed Vasim"
                     className="relative w-20 h-20 rounded-full object-cover border-2 border-[#8B5CF6]/40"
                   />
