@@ -30,8 +30,8 @@ export function Contact() {
     {
       icon: 'gmail',
       label: 'Email',
-      value: 'mohammed.vasim@example.com',
-      href: 'mailto:mohammed.vasim@example.com',
+      value: 'mohammadvasim353@gmail.com',
+      href: 'mailto:mohammadvasim353@gmail.com',
       gradient: 'from-[#0A0A0F] via-[#7C3AED] to-[#8B5CF6]',
       iconColor: 'text-[#8B5CF6]',
     },
@@ -276,7 +276,9 @@ export function Contact() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="mailto:mohammed.vasim@example.com"
+                href="mailto:mohammadvasim353@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white rounded-lg hover:shadow-lg hover:shadow-[#8B5CF6]/50 hover:-translate-y-1 transition-all"
               >
                 <img src={gmailLogo} alt="Gmail" className="w-5 h-5 group-hover:brightness-110 transition-all" />

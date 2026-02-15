@@ -161,7 +161,9 @@ export function Home() {
                   <FaInstagram className="w-6 h-6 text-[#E4405F] group-hover:brightness-125 transition-all" />
                 </a>
                 <a
-                  href="mailto:mohammed@example.com"
+                  href="mailto:mohammadvasim353@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group p-3 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
                 >
                   <img src={gmailLogo} alt="Gmail" className="w-6 h-6 group-hover:brightness-110 transition-all" />
