@@ -101,7 +101,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">Mohammed Vasim</h3>
-                  <p className="text-gray-400"><span className="text-[#8B5CF6]">AI</span> & Full Stack Developer</p>
+                  <p className="text-gray-400"><span className="text-[#8B5CF6]">AI</span> & Machine Learining Developer</p>
                 </div>
               </div>
 

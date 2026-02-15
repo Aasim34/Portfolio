@@ -11,16 +11,22 @@ export function Home() {
       title: 'AI Website Builder',
       description: 'AI-powered platform that auto-generates full-stack websites from text prompts',
       gradient: 'from-[#0A0A0F] via-[#7C3AED] to-[#8B5CF6]',
+      tags: ['Generative UX', 'Full-stack automation', 'Next.js'],
+      accent: 'bg-[#8B5CF6]',
     },
     {
       title: 'Smart PDF Search Engine',
       description: 'AI-powered hybrid keyword + semantic document search with natural language Q&A',
       gradient: 'from-[#7C3AED] to-[#A855F7]',
+      tags: ['RAG', 'Vector search', 'FastAPI'],
+      accent: 'bg-[#7C3AED]',
     },
     {
       title: 'Deepfake Detection System',
       description: 'Deep learning-based video manipulation detection with real-time inference',
       gradient: 'from-[#8B5CF6] to-[#C084FC]',
+      tags: ['Computer Vision', 'Real-time inference', 'PyTorch'],
+      accent: 'bg-[#C084FC]',
     },
   ];
 
@@ -86,7 +92,7 @@ export function Home() {
                 transition={{ duration: 0.7, delay: 0.1, ease: 'easeInOut' }}
                 className="text-2xl sm:text-3xl text-gray-300"
               >
-                <span className="text-[#8B5CF6]">AI</span> & Full Stack Developer
+                <span className="text-[#8B5CF6]">AI</span> & ML Developer
               </motion.h2>
 
               <motion.p
@@ -174,24 +180,63 @@ export function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: 'easeInOut' }}
-            className="text-center space-y-4 mb-12"
+            className="relative max-w-5xl mx-auto"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold">
-              About <span className="bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] bg-clip-text text-transparent">Me</span>
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              I'm a Computer Science Engineering student specializing in <span className="text-[#8B5CF6]">Artificial Intelligence</span> and Full Stack Development. 
-              With a passion for creating intelligent systems and scalable applications, I focus on leveraging cutting-edge 
-              technologies to solve real-world problems. My expertise spans machine learning, deep learning, computer vision, 
-              and modern web development frameworks.
-            </p>
-            <Link
-              to="/about"
-              className="inline-flex items-center gap-2 text-[#8B5CF6] hover:text-[#7C3AED] transition-colors"
-            >
-              Learn more about me
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#7C3AED]/25 via-[#8B5CF6]/15 to-transparent blur-3xl rounded-3xl" />
+            <div className="relative overflow-hidden rounded-3xl border border-[#8B5CF6]/25 bg-gradient-to-br from-[#11111A] via-[#0A0A0F] to-[#0B0B12] shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+              <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_20%,rgba(124,58,237,0.2),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(139,92,246,0.15),transparent_30%)]" />
+              <div className="relative grid md:grid-cols-[1.3fr_1fr] gap-10 p-8 sm:p-10">
+                <div className="space-y-5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#8B5CF6]/30 text-xs uppercase tracking-[0.12em] text-[#C4B5FD]">
+                    About Me
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl font-bold leading-tight">
+                    I'm a Computer Science Engineering student specializing in <span className="bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] bg-clip-text text-transparent">Artificial Intelligence</span> and Machine Learining Development.
+                  </h2>
+                  <p className="text-gray-300 leading-relaxed">
+                    With a passion for creating intelligent systems and scalable applications, I focus on leveraging cutting-edge technologies to solve real-world problems. My expertise spans machine learning, deep learning, computer vision, and modern web development frameworks.
+                  </p>
+                  <div className="flex flex-wrap gap-3 text-sm">
+                    <span className="px-3 py-2 rounded-full border border-[#8B5CF6]/40 bg-white/5 text-[#E9D5FF]">Machine Learning</span>
+                    <span className="px-3 py-2 rounded-full border border-[#7C3AED]/40 bg-white/5 text-[#C4B5FD]">Computer Vision</span>
+                    <span className="px-3 py-2 rounded-full border border-[#6D28D9]/40 bg-white/5 text-[#DDD6FE]">NLP</span>
+                    <span className="px-3 py-2 rounded-full border border-[#8B5CF6]/40 bg-white/5 text-[#E0E7FF]">API</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <Link
+                      to="/about"
+                      className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white shadow-lg shadow-[#8B5CF6]/40 hover:-translate-y-0.5 transition-all"
+                    >
+                      Learn more about me
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                    <span className="hidden sm:inline-flex text-sm text-gray-400">Always exploring the next model to ship.</span>
+                  </div>
+                </div>
+
+                <div className="grid gap-4 self-center">
+                  <div className="rounded-2xl border border-[#8B5CF6]/25 bg-white/5 p-5 shadow-inner shadow-[#8B5CF6]/10">
+                    <p className="text-sm uppercase tracking-wide text-gray-400 mb-2">What I build</p>
+                    <ul className="space-y-2 text-gray-200 text-sm leading-relaxed list-none">
+                      <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#8B5CF6]" />Intelligent products that blend AI-first features with usable UX.</li>
+                      <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#7C3AED]" />Robust data/ML pipelines with reproducible experiments.</li>
+                      <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#C084FC]" />Production-ready services that scale cleanly on cloud-native stacks.</li>
+                    </ul>
+                  </div>
+                  <div className="rounded-2xl border border-[#8B5CF6]/25 bg-gradient-to-r from-[#141426] to-[#0F0F19] p-5">
+                    <p className="text-sm uppercase tracking-wide text-gray-400 mb-3">Current toolkit</p>
+                    <div className="flex flex-wrap gap-2 text-xs text-[#EDE9FE]">
+                      <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">PyTorch</span>
+                      <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">TensorFlow</span>
+                      <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">FastAPI</span>
+                      <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Next.js</span>
+                      <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Tailwind</span>
+                      <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Docker</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -220,13 +265,47 @@ export function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeInOut' }}
-                className="group bg-[#121212] rounded-xl p-6 border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-xl hover:shadow-[#8B5CF6]/30 transition-all hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-2xl border border-[#8B5CF6]/25 bg-[#0F0F17] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.35)] hover:-translate-y-1.5 hover:shadow-[#8B5CF6]/30 hover:border-[#8B5CF6]/50 transition-all"
               >
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${project.gradient} mb-4 flex items-center justify-center shadow-lg shadow-[#8B5CF6]/20`}>
-                  <div className="w-6 h-6 bg-white/20 rounded"></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-10 group-hover:opacity-20 transition-opacity`} />
+                <div className="relative flex flex-col h-full gap-4">
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] uppercase tracking-[0.14em] text-[#EDE9FE]">
+                      Featured build
+                    </span>
+                    <span className={`h-2.5 w-2.5 rounded-full ${project.accent} shadow-[0_0_10px_rgba(139,92,246,0.6)]`} />
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">{project.description}</p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 rounded-full text-[12px] bg-white/5 border border-white/10 text-[#EDE9FE]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-auto flex items-center justify-between pt-2 text-sm text-gray-300">
+                    <div className="flex items-center gap-2">
+                      <span className={`h-2 w-2 rounded-full ${project.accent}`} />
+                      <span>AI-first experience</span>
+                    </div>
+                    <Link
+                      to="/projects"
+                      className="inline-flex items-center gap-1 text-[#C4B5FD] group-hover:text-white transition-colors"
+                    >
+                      View details
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-white">{project.title}</h3>
-                <p className="text-gray-400 text-sm">{project.description}</p>
               </motion.div>
             ))}
           </div>

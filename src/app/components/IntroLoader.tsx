@@ -117,7 +117,7 @@ export function IntroLoader({ onComplete }: IntroLoaderProps) {
               transition={{ duration: 0.8, delay: 1.3, ease: 'easeOut' }}
               className="text-xl md:text-2xl text-gray-400 tracking-wide"
             >
-              AI & Full Stack Developer
+              AI & Machine Learining Developer
             </motion.p>
 
             {/* Thin decorative line */}

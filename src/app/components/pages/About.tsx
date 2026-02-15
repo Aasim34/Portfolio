@@ -76,7 +76,7 @@ export function About() {
                 <h2 className="text-3xl font-bold mb-4 text-white">Mohammed Vasim</h2>
                 <p className="text-gray-400 leading-relaxed">
                   I'm a passionate Computer Science Engineering student with a specialization in <span className="text-[#8B5CF6]">Artificial Intelligence</span> 
-                  and Full Stack Development. My journey in technology is driven by a deep fascination with how AI can 
+                  and Machine Learining Development. My journey in technology is driven by a deep fascination with how AI can 
                   transform the way we interact with software and solve complex problems.
                 </p>
               </div>
