@@ -32,7 +32,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <span className="text-xl font-semibold bg-gradient-to-r from-[#0A0A0F] via-[#7C3AED] to-[#8B5CF6] bg-clip-text text-transparent">
+            <span className="text-xl font-semibold bg-gradient-to-r from-[#EDE9FE] via-[#8B5CF6] to-[#C4B5FD] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
               Mohammed Vasim
             </span>
           </Link>

@@ -222,13 +222,13 @@ export function Fun() {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-300 italic leading-relaxed">
+            <p className="text-3xl sm:text-4xl md:text-5xl font-light text-white italic leading-relaxed drop-shadow-[0_2px_16px_rgba(0,0,0,0.5)]">
               "Everything I experience shapes the{' '}
-              <span className="bg-gradient-to-r from-[#FF6B6B] to-[#E10600] bg-clip-text text-transparent font-semibold">
+              <span className="bg-gradient-to-r from-[#FFE5E5] via-[#FF6B6B] to-[#FF3B30] bg-clip-text text-transparent font-semibold">
                 systems I build
               </span>
               {' '}and the{' '}
-              <span className="bg-gradient-to-r from-[#E10600] to-[#D90429] bg-clip-text text-transparent font-semibold">
+              <span className="bg-gradient-to-r from-[#FFD6D6] via-[#FF4D4D] to-[#FF1E1E] bg-clip-text text-transparent font-semibold">
                 ideas I create
               </span>
               ."

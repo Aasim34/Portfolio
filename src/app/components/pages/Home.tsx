@@ -71,10 +71,10 @@ export function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.7, ease: 'easeInOut' }}
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.45)]"
               >
-                Mohammed{' '}
-                <span className="bg-gradient-to-r from-[#0A0A0F] via-[#7C3AED] to-[#8B5CF6] bg-clip-text text-transparent">
+                <span className="block">Mohammed</span>
+                <span className="block bg-gradient-to-r from-[#EDE9FE] via-[#8B5CF6] to-[#C4B5FD] bg-clip-text text-transparent">
                   Vasim
                 </span>
               </motion.h1>
