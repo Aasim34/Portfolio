@@ -1,24 +1,33 @@
 import { motion } from 'motion/react';
 import catCoffeeGif from '@/assets/cat/cat-and-coffee.gif';
+import animeSilhouette from '@/assets/Itachi theme/Cool Anime Silhouette.jfif';
+import darkAesthetic from '@/assets/Itachi theme/download (1).jfif';
+import intenseMoments from '@/assets/Itachi theme/download (2).jfif';
+import characterDepth from '@/assets/Itachi theme/download (3).jfif';
+import vastUniverse from '@/assets/Itachi theme/download (4).jfif';
+import cinematicVision from '@/assets/Itachi theme/download.jfif';
+import emotionalImpact from '@/assets/Itachi theme/images (1).jfif';
+import artisticExpression from '@/assets/Itachi theme/images (2).jfif';
+import legendaryIcons from '@/assets/Itachi theme/images.jfif';
 
 export function Fun() {
   const interests = [
     {
-      image: '/src/assets/Itachi theme/Cool Anime Silhouette.jfif',
+      image: animeSilhouette,
       title: 'Anime Philosophy',
       subtitle: 'Stories that shape patience and perspective',
       tag: 'Anime 🍥',
       quote: 'Discipline through storytelling',
     },
     {
-      image: '/src/assets/Itachi theme/download (1).jfif',
+      image: darkAesthetic,
       title: 'Dark Aesthetic',
       subtitle: 'Beauty in shadows and contrasts',
       tag: 'Movies & Series 🎬',
       quote: 'Where darkness meets depth',
     },
     {
-      image: '/src/assets/Itachi theme/download (2).jfif',
+      image: intenseMoments,
       title: 'Intense Moments',
       subtitle: 'Scenes that leave lasting impact',
       tag: 'Chess ♟️',
@@ -26,42 +35,42 @@ export function Fun() {
 
     },
     {
-      image: '/src/assets/Itachi theme/download (3).jfif',
+      image: characterDepth,
       title: 'Character Depth',
       subtitle: 'Understanding complexity through fiction',
       tag: 'Art Of Music 🎵',
       quote: 'Every character tells a story',
     },
     {
-      image: '/src/assets/Itachi theme/download (4).jfif',
+      image: vastUniverse,
       title: 'Admiring the Vast Universe',
       subtitle: 'Where art meets narrative',
       tag: 'Space 🌌',
       quote: 'Frames that speak volumes',
     },
     {
-      image: '/src/assets/Itachi theme/download.jfif',
+      image: cinematicVision,
       title: 'Cinematic Vision',
       subtitle: 'Visual creativity that inspires',
       tag: 'Takamaru ✨',
       quote: 'Every shot is intentional',
     },
     {
-      image: '/src/assets/Itachi theme/images (1).jfif',
+      image: emotionalImpact,
       title: 'Emotional Impact',
       subtitle: 'Scenes that stay with you forever',
       tag: 'Love Towards Marvel ❤️',
       quote: 'Moments that shape memories',
     },
     {
-      image: '/src/assets/Itachi theme/images (2).jfif',
+      image: artisticExpression,
       title: 'Artistic Expression',
       subtitle: 'Where creativity knows no bounds',
       tag: 'Paw Affinity 🐾',
       quote: 'Art fuels imagination',
     },
     {
-      image: '/src/assets/Itachi theme/images.jfif',
+      image: legendaryIcons,
       title: 'Legendary Icons',
       subtitle: 'Characters that inspire and motivate',
       tag: 'DR STRANGE 🔮',
