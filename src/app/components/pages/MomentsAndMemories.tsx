@@ -370,6 +370,8 @@ export function MomentsAndMemories() {
    
   ];
 
+  const [shuffledMemories] = useState(() => [...memories].sort(() => Math.random() - 0.5));
+
   return (
     <div className="min-h-screen py-24 px-4 sm:px-6 lg:px-8 bg-[#0A0A0F]">
       <div className="max-w-[1600px] mx-auto">
@@ -393,7 +395,7 @@ export function MomentsAndMemories() {
         <div>
           <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3, 1536: 4 }}>
             <Masonry gutter="20px">
-              {memories.map((memory) => (
+              {shuffledMemories.map((memory) => (
                 <div
                   key={memory.id}
                   className="relative group cursor-pointer"
