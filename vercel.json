@@ -1,0 +1,21 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "www.aasim.tech" }
+      ],
+      "destination": "https://aasim.tech/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "aasim.tech" },
+        { "type": "protocol", "value": "http" }
+      ],
+      "destination": "https://aasim.tech/$1",
+      "permanent": true
+    }
+  ]
+}
