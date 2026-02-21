@@ -1,0 +1,42 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0A0F;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a0033;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A0A0F;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EDE9FE;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C4B5FD;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background with gradient -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Accent line -->
+  <rect x="0" y="280" width="1200" height="2" fill="#8B5CF6" opacity="0.3"/>
+  
+  <!-- Main Name -->
+  <text x="600" y="240" font-family="Arial, sans-serif" font-size="90" font-weight="bold" text-anchor="middle" fill="url(#textGradient)">
+    Mohammed Vasim
+  </text>
+  
+  <!-- Role -->
+  <text x="600" y="340" font-family="Arial, sans-serif" font-size="48" text-anchor="middle" fill="#8B5CF6">
+    AI & ML Developer
+  </text>
+  
+  <!-- Tagline -->
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="#A0A0C0" font-weight="300">
+    Portfolio • Projects • Skills
+  </text>
+  
+  <!-- Decorative dots -->
+  <circle cx="200" cy="150" r="6" fill="#8B5CF6" opacity="0.4"/>
+  <circle cx="1000" cy="500" r="6" fill="#7C3AED" opacity="0.4"/>
+  <circle cx="150" cy="550" r="4" fill="#A855F7" opacity="0.3"/>
+  <circle cx="1050" cy="100" r="4" fill="#C084FC" opacity="0.3"/>
+</svg>
