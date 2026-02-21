@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+User-agent: Linkedinbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+Disallow: /node_modules/
+Disallow: /.git/
+
+Sitemap: https://aasim.tech/sitemap.xml
