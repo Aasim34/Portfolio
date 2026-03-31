@@ -70,18 +70,31 @@ export function About() {
         >
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Photo */}
-            <div className="relative flex justify-center">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0F] via-[#7C3AED] to-[#8B5CF6] rounded-2xl blur-2xl opacity-50"></div>
-                <div className="relative rounded-2xl overflow-hidden border-2 border-[#8B5CF6]/40 hover:border-[#8B5CF6]/60 transition-all">
+            <motion.div 
+              whileHover={{ scale: 1.02 }}
+              className="relative flex justify-center order-1 md:order-none"
+            >
+              <div className="relative group">
+                {/* Animated gradient background */}
+                <motion.div 
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                  className="absolute inset-0 bg-gradient-to-br from-[#7C3AED] via-[#8B5CF6] to-[#C084FC] rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity"
+                />
+                
+                {/* Photo container */}
+                <div className="relative rounded-3xl overflow-hidden border-4 border-[#8B5CF6]/50 hover:border-[#8B5CF6] transition-all shadow-[0_0_40px_rgba(139,92,246,0.4)] group-hover:shadow-[0_0_60px_rgba(139,92,246,0.6)]">
                   <img
                     src={aboutPhoto}
                     alt="Mohammed Vasim"
                     className="w-full max-w-md h-auto object-cover"
                   />
+                  
+                  {/* Overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#8B5CF6]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Bio */}
             <div className="space-y-6">
@@ -117,16 +130,20 @@ export function About() {
                 </p>
               </div>
 
-              <a
+              <motion.a
                 href="/Resume/MOHAMMAD_VASIM_RESUME.pdf"
                 download="MOHAMMAD_VASIM_RESUME.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white rounded-lg hover:shadow-lg hover:shadow-[#8B5CF6]/50 hover:-translate-y-1 transition-all"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white rounded-xl font-semibold overflow-hidden group shadow-lg shadow-[#8B5CF6]/30"
               >
-                <Download className="w-4 h-4" />
-                Download Resume
-              </a>
+                <span className="relative flex items-center gap-2">
+                  <Download className="w-4 h-4" />
+                  Download Resume
+                </span>
+              </motion.a>
             </div>
           </div>
         </motion.div>

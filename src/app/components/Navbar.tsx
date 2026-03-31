@@ -26,15 +26,21 @@ export function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0F]/90 backdrop-blur-md border-b border-[#8B5CF6]/20"
+      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#0A0A0F]/95 via-[#0A0A0F]/85 to-[#0A0A0F]/75 backdrop-blur-xl border-b border-gradient-to-r border-[#8B5CF6]/20 hover:border-[#8B5CF6]/30 transition-all"
+      style={{
+        boxShadow: '0 8px 32px rgba(139, 92, 246, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05)'
+      }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <span className="text-xl font-semibold bg-gradient-to-r from-[#EDE9FE] via-[#8B5CF6] to-[#C4B5FD] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
+          <Link to="/" className="flex items-center group">
+            <motion.span 
+              whileHover={{ scale: 1.05 }}
+              className="text-xl font-bold bg-gradient-to-r from-[#EDE9FE] via-[#8B5CF6] to-[#C4B5FD] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(139,92,246,0.4)] group-hover:drop-shadow-[0_2px_20px_rgba(139,92,246,0.6)] transition-all"
+            >
               Mohammed Vasim
-            </span>
+            </motion.span>
           </Link>
 
           {/* Desktop Menu */}
@@ -43,13 +49,27 @@ export function Navbar() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm transition-colors hover:text-[#8B5CF6] ${
-                  isActive(item.path)
-                    ? 'text-[#8B5CF6] font-medium'
-                    : 'text-gray-300'
-                }`}
+                className="relative group"
               >
-                {item.name}
+                <span
+                  className={`text-sm font-medium transition-colors ${
+                    isActive(item.path)
+                      ? 'text-[#8B5CF6]'
+                      : 'text-gray-300 group-hover:text-white'
+                  }`}
+                >
+                  {item.name}
+                </span>
+                {isActive(item.path) && (
+                  <motion.div
+                    layoutId="navbar-underline"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#8B5CF6] to-[#C084FC]"
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
+                {!isActive(item.path) && (
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#8B5CF6] to-[#C084FC] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                )}
               </Link>
             ))}
           </div>
@@ -57,7 +77,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-gray-300 hover:text-white"
+            className="md:hidden p-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -69,18 +89,18 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden py-4 border-t border-[#8B5CF6]/20"
+            className="md:hidden py-4 border-t border-[#8B5CF6]/20 bg-gradient-to-b from-transparent to-[#0A0A0F]/50"
           >
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-sm transition-colors hover:text-[#8B5CF6] ${
+                  className={`px-4 py-2 rounded-lg transition-all ${
                     isActive(item.path)
-                      ? 'text-[#8B5CF6] font-medium'
-                      : 'text-gray-300'
+                      ? 'bg-[#8B5CF6]/20 text-[#8B5CF6] font-medium border border-[#8B5CF6]/40'
+                      : 'text-gray-300 hover:bg-white/5 hover:text-white'
                   }`}
                 >
                   {item.name}

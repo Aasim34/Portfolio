@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Download, Send, MapPin } from 'lucide-react';
+import { Download, Send, MapPin, ArrowRight } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { useState } from 'react';
 import gmailLogo from '@/assets/c15b5692091c1796f264c6911b20032c19157478.png';
@@ -90,33 +90,39 @@ export function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.1, ease: 'easeInOut' }}
-              className="bg-[#121212] rounded-xl p-6 border border-[#8B5CF6]/30"
+              whileHover={{ scale: 1.02 }}
+              className="bg-gradient-to-br from-[#0F0F17] via-[#0A0A12] to-[#0F0F17] rounded-2xl p-6 border border-[#8B5CF6]/30 hover:border-[#8B5CF6]/60 transition-all shadow-lg shadow-[#8B5CF6]/10 hover:shadow-[#8B5CF6]/20"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0F] via-[#7C3AED] to-[#8B5CF6] rounded-full blur-lg opacity-50"></div>
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED] to-[#8B5CF6] rounded-full blur-lg opacity-50"></div>
                   <img
                     src={profileImg}
                     alt="Mohammed Vasim"
-                    className="relative w-20 h-20 rounded-full object-cover border-2 border-[#8B5CF6]/40"
+                    className="relative w-20 h-20 rounded-full object-cover border-2 border-[#8B5CF6]/60"
                   />
-                </div>
+                </motion.div>
                 <div>
                   <h3 className="text-xl font-bold text-white">Mohammed Vasim</h3>
-                  <p className="text-gray-400"><span className="text-[#8B5CF6]">AI</span> & Machine Learining Developer</p>
+                  <p className="text-gray-400"><span className="text-[#8B5CF6]">AI</span> & ML Developer</p>
                 </div>
               </div>
 
-              <a
+              <motion.a
                 href="/Resume/MOHAMMAD_VASIM_RESUME.pdf"
                 download="MOHAMMAD_VASIM_RESUME.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white rounded-lg hover:shadow-lg hover:shadow-[#8B5CF6]/50 hover:-translate-y-1 transition-all"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white rounded-xl font-semibold shadow-lg shadow-[#8B5CF6]/30 transition-all"
               >
                 <Download className="w-4 h-4" />
                 Download Resume
-              </a>
+              </motion.a>
             </motion.div>
 
             {/* Contact Methods */}
@@ -140,19 +146,27 @@ export function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.8, delay: 0.2 + index * 0.1, ease: 'easeInOut' }}
-                  className="flex items-center gap-4 p-4 bg-[#121212] rounded-xl border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 transition-all group"
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  className="flex items-center gap-4 p-5 bg-gradient-to-br from-[#0F0F17] to-[#0A0A12] rounded-2xl border border-[#8B5CF6]/30 hover:border-[#8B5CF6]/60 transition-all group shadow-lg shadow-[#8B5CF6]/5 hover:shadow-[#8B5CF6]/15"
                 >
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${info.gradient} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg shadow-[#8B5CF6]/20`}>
+                  <motion.div 
+                    whileHover={{ scale: 1.15, rotate: 5 }}
+                    className={`w-14 h-14 rounded-xl bg-gradient-to-r ${info.gradient} flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#8B5CF6]/20 relative`}
+                  >
                     {info.icon === 'gmail' ? (
-                      <img src={gmailLogo} alt="Gmail" className="w-6 h-6 group-hover:brightness-110 transition-all" />
+                      <img src={gmailLogo} alt="Gmail" className="w-6 h-6 group-hover:brightness-120 transition-all" />
                     ) : (
                       <info.icon className={`w-6 h-6 ${info.iconColor} group-hover:brightness-125 transition-all`} />
                     )}
+                    <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" style={{
+                      boxShadow: 'inset 0 0 20px rgba(168, 85, 247, 0.2)'
+                    }} />
+                  </motion.div>
+                  <div className="flex-1">
+                    <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">{info.label}</p>
+                    <p className="text-white font-semibold group-hover:text-[#C4B5FD] transition-colors">{info.value}</p>
                   </div>
-                  <div>
-                    <p className="text-sm text-gray-400">{info.label}</p>
-                    <p className="text-white font-medium">{info.value}</p>
-                  </div>
+                  <ArrowRight className="w-4 h-4 text-[#8B5CF6] opacity-0 group-hover:opacity-100 transition-opacity" />
                 </motion.a>
               ))}
             </div>
@@ -183,81 +197,89 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeInOut' }}
-            className="bg-[#121212] rounded-xl p-8 border border-[#8B5CF6]/30"
+            className="bg-gradient-to-br from-[#0F0F17] via-[#0A0A12] to-[#0F0F17] rounded-2xl p-8 border border-[#8B5CF6]/30 hover:border-[#8B5CF6]/60 transition-all shadow-lg shadow-[#8B5CF6]/10"
           >
             <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2">
                   Your Name
                 </label>
-                <input
+                <motion.input
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-[#0A0A0F] text-white rounded-lg border border-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/50 transition-all"
+                  whileFocus={{ scale: 1.02 }}
+                  className="w-full px-4 py-3 bg-[#0A0A12] text-white rounded-xl border border-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/50 transition-all placeholder-gray-500"
                   placeholder="John Doe"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
                   Email Address
                 </label>
-                <input
+                <motion.input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-[#0A0A0F] text-white rounded-lg border border-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/50 transition-all"
+                  whileFocus={{ scale: 1.02 }}
+                  className="w-full px-4 py-3 bg-[#0A0A12] text-white rounded-xl border border-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/50 transition-all placeholder-gray-500"
                   placeholder="john@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="subject" className="block text-sm font-semibold text-gray-300 mb-2">
                   Subject
                 </label>
-                <input
+                <motion.input
                   type="text"
                   id="subject"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-[#0A0A0F] text-white rounded-lg border border-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/50 transition-all"
+                  whileFocus={{ scale: 1.02 }}
+                  className="w-full px-4 py-3 bg-[#0A0A12] text-white rounded-xl border border-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/50 transition-all placeholder-gray-500"
                   placeholder="Project Inquiry"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-2">
                   Message
                 </label>
-                <textarea
+                <motion.textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-[#0A0A0F] text-white rounded-lg border border-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/50 transition-all resize-none"
+                  rows={5}
+                  whileFocus={{ scale: 1.02 }}
+                  className="w-full px-4 py-3 bg-[#0A0A12] text-white rounded-xl border border-[#8B5CF6]/30 focus:border-[#8B5CF6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/50 transition-all resize-none placeholder-gray-500"
                   placeholder="Tell me about your project..."
                 />
               </div>
 
-              <button
+              <motion.button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-[#8B5CF6]/50 hover:-translate-y-1 transition-all"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white font-semibold rounded-xl shadow-lg shadow-[#8B5CF6]/30 hover:shadow-[#8B5CF6]/50 transition-all overflow-hidden group"
               >
-                <Send className="w-4 h-4" />
-                Send Message
-              </button>
+                <span className="relative flex items-center gap-2">
+                  <Send className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  Send Message
+                </span>
+              </motion.button>
             </form>
           </motion.div>
         </div>

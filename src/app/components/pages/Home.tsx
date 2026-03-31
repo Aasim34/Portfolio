@@ -113,23 +113,43 @@ export function Home() {
                 transition={{ duration: 0.7, delay: 0.3, ease: 'easeInOut' }}
                 className="flex flex-wrap gap-4 justify-center md:justify-start"
               >
-                <Link
-                  to="/projects"
-                  className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white rounded-lg hover:shadow-lg hover:shadow-[#8B5CF6]/50 hover:-translate-y-1 transition-all"
-                >
-                  View Projects
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <a
+                <motion.div whileHover="hover">
+                  <Link
+                    to="/projects"
+                    className="relative flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white rounded-xl font-semibold overflow-hidden group"
+                    style={{
+                      boxShadow: '0 10px 30px rgba(124, 58, 237, 0.3)'
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#8B5CF6] to-[#A855F7] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span className="relative flex items-center gap-2">
+                      View Projects
+                      <motion.div
+                        variants={{ hover: { x: 4 } }}
+                      >
+                        <ArrowRight className="w-4 h-4" />
+                      </motion.div>
+                    </span>
+                  </Link>
+                </motion.div>
+                
+                <motion.a
                   href="/Resume/MOHAMMAD_VASIM_RESUME.pdf"
                   download="MOHAMMAD_VASIM_RESUME.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-transparent text-white rounded-lg border border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
+                  whileHover="hover"
+                  className="relative flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-transparent to-transparent text-white rounded-xl font-semibold overflow-hidden group border-2 border-[#8B5CF6] hover:border-[#C084FC] transition-all"
+                  style={{
+                    boxShadow: '0 10px 30px rgba(124, 58, 237, 0.15)'
+                  }}
                 >
-                  <Download className="w-4 h-4" />
-                  Download Resume
-                </a>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#7C3AED]/20 to-[#8B5CF6]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span className="relative flex items-center gap-2">
+                    <Download className="w-4 h-4" />
+                    Download Resume
+                  </span>
+                </motion.a>
               </motion.div>
 
               {/* Social Links */}
@@ -138,40 +158,60 @@ export function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.7, delay: 0.4, ease: 'easeInOut' }}
-                className="flex gap-4 pt-4 justify-center md:justify-start"
+                className="flex gap-3 pt-4 justify-center md:justify-start"
               >
-                <a
+                <motion.a
                   href="https://github.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-3 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group p-3 bg-gradient-to-br from-[#1A1A24] to-[#0F0F14] rounded-xl border border-[#8B5CF6]/40 hover:border-[#8B5CF6] transition-all"
+                  style={{
+                    boxShadow: '0 8px 20px rgba(139, 92, 246, 0.15)'
+                  }}
                 >
-                  <FaGithub className="w-6 h-6 text-white group-hover:brightness-110 transition-all" />
-                </a>
-                <a
+                  <FaGithub className="w-6 h-6 text-white group-hover:text-[#C084FC] transition-all" />
+                </motion.a>
+                <motion.a
                   href="https://www.linkedin.com/in/mohammed-vasim-64084b331"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-3 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group p-3 bg-gradient-to-br from-[#1A1A24] to-[#0F0F14] rounded-xl border border-[#8B5CF6]/40 hover:border-[#0A66C2] transition-all"
+                  style={{
+                    boxShadow: '0 8px 20px rgba(139, 92, 246, 0.15)'
+                  }}
                 >
-                  <FaLinkedin className="w-6 h-6 text-[#0A66C2] group-hover:brightness-125 transition-all" />
-                </a>
-                <a
+                  <FaLinkedin className="w-6 h-6 text-[#0A66C2] group-hover:text-[#0A7FD9] transition-all" />
+                </motion.a>
+                <motion.a
                   href="https://www.instagram.com/mdaasim2005"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-3 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group p-3 bg-gradient-to-br from-[#1A1A24] to-[#0F0F14] rounded-xl border border-[#8B5CF6]/40 hover:border-[#E4405F] transition-all"
+                  style={{
+                    boxShadow: '0 8px 20px rgba(139, 92, 246, 0.15)'
+                  }}
                 >
-                  <FaInstagram className="w-6 h-6 text-[#E4405F] group-hover:brightness-125 transition-all" />
-                </a>
-                <a
+                  <FaInstagram className="w-6 h-6 text-[#E4405F] group-hover:text-[#F77737] transition-all" />
+                </motion.a>
+                <motion.a
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=mohammadvasim353@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-3 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group p-3 bg-gradient-to-br from-[#1A1A24] to-[#0F0F14] rounded-xl border border-[#8B5CF6]/40 hover:border-[#EA4335] transition-all"
+                  style={{
+                    boxShadow: '0 8px 20px rgba(139, 92, 246, 0.15)'
+                  }}
                 >
-                  <img src={gmailLogo} alt="Gmail" className="w-6 h-6 group-hover:brightness-110 transition-all" />
-                </a>
+                  <img src={gmailLogo} alt="Gmail" className="w-6 h-6 group-hover:brightness-120 transition-all" />
+                </motion.a>
               </motion.div>
             </div>
           </div>
@@ -271,19 +311,37 @@ export function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeInOut' }}
-                className="group relative overflow-hidden rounded-2xl border border-[#8B5CF6]/25 bg-[#0F0F17] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.35)] hover:-translate-y-1.5 hover:shadow-[#8B5CF6]/30 hover:border-[#8B5CF6]/50 transition-all"
+                whileHover={{ y: -8, transition: { duration: 0.2 } }}
+                className="group relative overflow-hidden rounded-2xl border border-[#8B5CF6]/25 bg-gradient-to-br from-[#0F0F17] via-[#0A0A12] to-[#0F0F17] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.35)] hover:shadow-[0_30px_60px_rgba(139,92,246,0.2)] hover:border-[#8B5CF6]/60 transition-all"
+                style={{
+                  backgroundImage: `
+                    linear-gradient(135deg, transparent 0%, rgba(139, 92, 246, 0.03) 100%)
+                  `
+                }}
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-10 group-hover:opacity-20 transition-opacity`} />
-                <div className="relative flex flex-col h-full gap-4">
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-2xl`} />
+                
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{
+                  background: `
+                    radial-gradient(600px at 0% 0%, rgba(139, 92, 246, 0.1), transparent 80%),
+                    radial-gradient(600px at 100% 100%, rgba(124, 58, 237, 0.1), transparent 80%)
+                  `
+                }} />
+                
+                <div className="relative flex flex-col h-full gap-4 z-10">
                   <div className="flex items-center justify-between">
-                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] uppercase tracking-[0.14em] text-[#EDE9FE]">
-                      Featured build
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#8B5CF6]/40 text-[11px] uppercase tracking-[0.14em] text-[#C4B5FD] group-hover:border-[#C084FC] transition-colors">
+                      ✨ Featured
                     </span>
-                    <span className={`h-2.5 w-2.5 rounded-full ${project.accent} shadow-[0_0_10px_rgba(139,92,246,0.6)]`} />
+                    <motion.span 
+                      className={`h-3 w-3 rounded-full ${project.accent}`}
+                      animate={{ boxShadow: ['0_0_10px rgba(139,92,246,0.6)', '0_0_20px rgba(139,92,246,0.8)', '0_0_10px rgba(139,92,246,0.6)'] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    />
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#C4B5FD] transition-colors">{project.title}</h3>
                     <p className="text-gray-300 text-sm leading-relaxed">{project.description}</p>
                   </div>
 
@@ -291,25 +349,30 @@ export function Home() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 rounded-full text-[12px] bg-white/5 border border-white/10 text-[#EDE9FE]"
+                        className="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 border border-[#8B5CF6]/30 text-[#E0E7FF] group-hover:border-[#C084FC]/50 group-hover:bg-[#8B5CF6]/10 transition-all"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <div className="mt-auto flex items-center justify-between pt-2 text-sm text-gray-300">
-                    <div className="flex items-center gap-2">
-                      <span className={`h-2 w-2 rounded-full ${project.accent}`} />
-                      <span>AI-first experience</span>
+
+                  <div className="mt-auto flex items-center justify-between pt-4 text-sm border-t border-[#8B5CF6]/20 group-hover:border-[#8B5CF6]/40 transition-all">
+                    <div className="flex items-center gap-2 text-gray-400">
+                      <span className={`h-2 w-2 rounded-full ${project.accent} shadow-lg`} />
+                      <span className="group-hover:text-[#C4B5FD] transition-colors">AI-powered</span>
                     </div>
-                    <Link
-                      to="/projects"
-                      className="inline-flex items-center gap-1 text-[#C4B5FD] group-hover:text-white transition-colors"
+                    <motion.div
+                      whileHover={{ x: 4 }}
                     >
-                      View details
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
+                      <Link
+                        to="/projects"
+                        className="inline-flex items-center gap-2 text-[#C4B5FD] group-hover:text-white font-medium transition-colors"
+                      >
+                        View details
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </motion.div>
                   </div>
                 </div>
               </motion.div>

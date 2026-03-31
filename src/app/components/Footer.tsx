@@ -1,123 +1,198 @@
 import { ArrowRight, Heart, Sparkles } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { motion } from 'motion/react';
 import gmailLogo from '@/assets/c15b5692091c1796f264c6911b20032c19157478.png';
 
 export function Footer() {
+  const links = [
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    { label: 'Projects', href: '/projects' },
+    { label: 'Skills', href: '/skills' },
+    { label: 'Contact', href: '/contact' },
+  ];
+
   return (
-    <footer className="relative overflow-hidden bg-[#08080F] border-t border-[#8B5CF6]/20 px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-[#0A0A0F] via-[#08080F] to-[#050508] border-t border-[#8B5CF6]/20 px-4 sm:px-6 lg:px-8 py-12">
       <div className="pointer-events-none absolute inset-0 opacity-90">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(124,58,237,0.12),transparent_35%),radial-gradient(circle_at_85%_0%,rgba(139,92,246,0.12),transparent_32%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[length:140px_140px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(124,58,237,0.15),transparent_35%),radial-gradient(circle_at_85%_0%,rgba(139,92,246,0.15),transparent_32%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[length:140px_140px]" />
       </div>
 
       <div className="relative max-w-7xl mx-auto space-y-12">
-        <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-[#0D0D18]/95 via-[#0B0B14] to-[#0E0E19]/95 p-6 sm:p-8 shadow-[0_18px_55px_rgba(0,0,0,0.55)]">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.14em] text-[#C4B5FD]">
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8 }}
+          className="rounded-3xl border border-white/10 bg-gradient-to-r from-[#0D0D18]/90 via-[#0B0B14] to-[#0E0E19]/90 p-8 sm:p-10 shadow-[0_20px_50px_rgba(139,92,246,0.1)]"
+        >
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="space-y-4 flex-1">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.14em] text-[#C4B5FD]"
+              >
                 <Sparkles className="h-4 w-4" />
-                Let's build something bold
+                Let's collaborate
+              </motion.div>
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">Ready to build something amazing?</h3>
+                <p className="text-sm sm:text-base text-gray-300 max-w-2xl">
+                  I'm always excited about new opportunities and collaborations. Let's connect and create something extraordinary together.
+                </p>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-semibold text-white">Mohammed Vasim • AI & ML Developer</h3>
-              <p className="text-sm sm:text-base text-gray-300 max-w-2xl">
-                From GenAI products to production-ready APIs, I design and ship experiences that feel intentional—not default. Reach out for collaborations, rapid prototyping, or polished launches.
-              </p>
             </div>
-            <div className="flex flex-wrap gap-3">
-              <a
+            <div className="flex flex-wrap gap-3 justify-start md:justify-end">
+              <motion.a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=mohammadvasim353@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_45px_rgba(124,58,237,0.32)] transition hover:translate-y-[-2px]"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#8B5CF6]/40 transition-all"
               >
                 Email me
                 <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="/projects"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/12 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#C084FC] hover:bg-white/10"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:border-[#C084FC]/50 hover:bg-white/10 transition-all"
               >
                 View work
-              </a>
+              </motion.a>
             </div>
           </div>
-        </div>
+        </motion.div>
 
+        {/* Links and Social */}
         <div className="grid gap-8 md:grid-cols-3">
-          <div className="space-y-3">
-            <h3 className="text-xl font-semibold bg-gradient-to-r from-[#0A0A0F] via-[#7C3AED] to-[#8B5CF6] bg-clip-text text-transparent">
+          {/* Brand Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
+            className="space-y-4"
+          >
+            <h3 className="text-xl font-bold bg-gradient-to-r from-[#EDE9FE] via-[#8B5CF6] to-[#C4B5FD] bg-clip-text text-transparent">
               Mohammed Vasim
             </h3>
-            <p className="text-gray-400 text-sm">
-              <span className="text-[#8B5CF6]">AI</span> & Machine Learning Developer focused on shipping reliable systems with expressive, premium UI.
+            <p className="text-gray-400 text-sm leading-relaxed">
+              <span className="text-[#8B5CF6] font-semibold">AI & ML Developer</span> crafting intelligent systems with beautiful interfaces. Passionate about transforming ideas into impactful solutions.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <h4 className="text-white font-semibold mb-3">Quick Links</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="/" className="text-gray-400 hover:text-[#8B5CF6] transition-colors">Home</a></li>
-                <li><a href="/about" className="text-gray-400 hover:text-[#8B5CF6] transition-colors">About</a></li>
-                <li><a href="/projects" className="text-gray-400 hover:text-[#8B5CF6] transition-colors">Projects</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-3">Explore</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="/skills" className="text-gray-400 hover:text-[#8B5CF6] transition-colors">Skills</a></li>
-                <li><a href="/contact" className="text-gray-400 hover:text-[#8B5CF6] transition-colors">Contact</a></li>
-                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mohammadvasim353@gmail.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#8B5CF6] transition-colors">Gmail</a></li>
-              </ul>
-            </div>
-          </div>
+          {/* Quick Navigation */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <h4 className="text-white font-semibold mb-4">Quick Navigation</h4>
+            <ul className="space-y-2">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <motion.a
+                    href={link.href}
+                    whileHover={{ x: 4 }}
+                    className="text-gray-400 hover:text-[#8B5CF6] transition-colors inline-flex items-center gap-1"
+                  >
+                    <span className="inline-block w-0 h-0.5 bg-[#8B5CF6] group-hover:w-2 transition-all" />
+                    {link.label}
+                  </motion.a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
 
-          <div>
-            <h4 className="text-white font-semibold mb-3">Connect</h4>
+          {/* Social Connect */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h4 className="text-white font-semibold mb-4">Connect</h4>
             <div className="flex gap-3">
-              <a
+              <motion.a
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-2 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="group p-3 bg-gradient-to-br from-[#1A1A24] to-[#0F0F14] rounded-xl border border-[#8B5CF6]/30 hover:border-[#8B5CF6] transition-all"
+                style={{
+                  boxShadow: '0 8px 20px rgba(139, 92, 246, 0.15)'
+                }}
               >
-                <FaGithub className="w-5 h-5 text-white group-hover:brightness-110 transition-all" />
-              </a>
-              <a
+                <FaGithub className="w-5 h-5 text-white group-hover:text-[#C084FC] transition-all" />
+              </motion.a>
+              <motion.a
                 href="https://www.linkedin.com/in/mohammed-vasim-64084b331"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-2 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="group p-3 bg-gradient-to-br from-[#1A1A24] to-[#0F0F14] rounded-xl border border-[#8B5CF6]/30 hover:border-[#0A66C2] transition-all"
+                style={{
+                  boxShadow: '0 8px 20px rgba(139, 92, 246, 0.15)'
+                }}
               >
-                <FaLinkedin className="w-5 h-5 text-[#0A66C2] group-hover:brightness-125 transition-all" />
-              </a>
-              <a
+                <FaLinkedin className="w-5 h-5 text-[#0A66C2] group-hover:text-[#0A7FD9] transition-all" />
+              </motion.a>
+              <motion.a
                 href="https://www.instagram.com/mdaasim2005"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-2 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="group p-3 bg-gradient-to-br from-[#1A1A24] to-[#0F0F14] rounded-xl border border-[#8B5CF6]/30 hover:border-[#E4405F] transition-all"
+                style={{
+                  boxShadow: '0 8px 20px rgba(139, 92, 246, 0.15)'
+                }}
               >
-                <FaInstagram className="w-5 h-5 text-[#E4405F] group-hover:brightness-125 transition-all" />
-              </a>
-              <a
+                <FaInstagram className="w-5 h-5 text-[#E4405F] group-hover:text-[#F77737] transition-all" />
+              </motion.a>
+              <motion.a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=mohammadvasim353@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-2 bg-[#121212] rounded-lg border border-[#8B5CF6]/30 hover:border-[#8B5CF6] hover:shadow-lg hover:shadow-[#8B5CF6]/30 hover:-translate-y-1 transition-all"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="group p-3 bg-gradient-to-br from-[#1A1A24] to-[#0F0F14] rounded-xl border border-[#8B5CF6]/30 hover:border-[#EA4335] transition-all"
+                style={{
+                  boxShadow: '0 8px 20px rgba(139, 92, 246, 0.15)'
+                }}
               >
-                <img src={gmailLogo} alt="Gmail" className="w-5 h-5 group-hover:brightness-110 transition-all" />
-              </a>
+                <img src={gmailLogo} alt="Gmail" className="w-5 h-5 group-hover:brightness-120 transition-all" />
+              </motion.a>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="border-t border-[#8B5CF6]/20 pt-6 text-center">
-          <p className="text-gray-400 text-sm flex items-center justify-center gap-2">
-            © 2026 Mohammed Vasim. Built using
-            <Heart className="w-4 h-4 text-[#8B5CF6]" fill="currentColor" />
-            React & Tailwind CSS
+        {/* Bottom Bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/10"
+        >
+          <p className="text-xs text-gray-500">
+            © 2026 Mohammed Vasim. All rights reserved.
           </p>
-        </div>
+          <div className="flex items-center gap-2 text-xs text-gray-500">
+            Made with <Heart className="w-3 h-3 text-[#8B5CF6] fill-[#8B5CF6]" /> and lots of <span className="text-[#8B5CF6]">AI</span>
+          </div>
+        </motion.div>
       </div>
     </footer>
   );
